@@ -1,6 +1,8 @@
-# 📘 ds-crispdm-template
+![Banner](.figures/banner.png)
 
+# 🧠 Roberto DS Framework (RDSF)
 
+### Professional CRISP-DM Data Science Architecture Template
 
 ![CRISP-DM](https://img.shields.io/badge/Methodology-CRISP--DM-blue)
 ![Reproducible](https://img.shields.io/badge/Reproducible-Yes-brightgreen)
@@ -9,9 +11,9 @@
 ![Status](https://img.shields.io/badge/Status-Active-success)
 ![License](https://img.shields.io/badge/License-MIT-lightgrey)
 
+![RDSF](https://img.shields.io/badge/Framework-Roberto%20DS%20Framework-black)
 
-
-### Data Science Project Framework baseado em CRISP-DM + Engenharia Moderna de Dados
+ 
 
 ---
 
@@ -306,6 +308,34 @@ Mover funções repetidas para:
 
 ---
 
+## 🎯 Why This Template Matters
+
+This template demonstrates:
+
+- Structured problem-solving using CRISP-DM
+
+- Explicit artifact contracts between phases
+
+- Reproducible environments (uv)
+
+- Cross-over between Data Science and Data Engineering
+
+- Progressive evolution from notebook to production-ready architecture
+
+It reflects professional-level organization, scalability, and deployment awareness — not just model experimentation.
+
+---
+
+## 🏗 Professional Positioning
+
+This project is designed to simulate real-world data science delivery:
+
+✔ Clear phase separation  
+✔ Artifact versioning  
+✔ Validation rigor (Stratified CV + GridSearch)  
+✔ Model persistence and inference pipeline  
+✔ Scalable architecture ready for src/ evolution
+
 # 👤 Autor
 
 Roberto Soares  
@@ -313,6 +343,4 @@ Data Engineering | Data Science | Developer Experience
 
 ---
 
----
-
-
+---fi/
