@@ -13,8 +13,6 @@
 
 ![RDSF](https://img.shields.io/badge/Framework-Roberto%20DS%20Framework-black)
 
- 
-
 ---
 
 ## 🎯 Propósito
@@ -132,8 +130,6 @@ Isso reduz retrabalho, evita divergências e facilita auditoria do processo.
 
 > **Evolução progressiva:** no início, a lógica pode viver nos notebooks. Com maturidade, funções repetidas migram para `03_src/`, e os notebooks viram orquestradores.
 
-
-
 ---
 
 
@@ -141,68 +137,60 @@ Isso reduz retrabalho, evita divergências e facilita auditoria do processo.
 ### Diagrama de Arquitetura (CRISP-DM + Artefatos)
 
 ```mermaid
-flowchart TB
- A[00_data/00_raw<br/>Dados originais] --> B[00_data/01_bronze<br/>Ingestão mínima]
- B --> C[00_data/02_silver<br/>Limpeza + consistência]
- C --> D[00_data/03_gold<br/>ABT / Dataset de modelagem]
+flowchart TB 
+A[00_data/00_raw<br/>Dados originais] --> B[00_data/01_bronze<br/>Ingestão mínima] 
+B --> C[00_data/02_silver<br/>Limpeza + consistência] 
+C --> D[00_data/03_gold<br/>ABT / Dataset de modelagem]
 
-subgraph N[02_notebooks (CRISP-DM)]
- N0[00_project_index<br/>Hub + Gates]
- N1[01_business_data_understanding<br/>BU + DU (EDA/Qualidade)]
- N2[02_data_preparation_abt<br/>Prep + FE + ABT]
- N3[03_modeling_validation<br/>Modeling + Validation]
- N4[04_operationalization_submission<br/>Deploy/Inference + Submission]
- end
+subgraph N[02_notebooks (CRISP-DM)]  
+N0[00_project_index<br/>Hub + Gates]  
+N1[01_business_data_understanding<br/>BU + DU (EDA/Qualidade)]  
+N2[02_data_preparation_abt<br/>Prep + FE + ABT]  
+N3[03_modeling_validation<br/>Modeling + Validation]  
+N4[04_operationalization_submission<br/>Deploy/Inference + Submission]  
+end
 
-D --> N3
- N1 -->|Quality report + findings| AR1[05_artifacts/01<br/>EDA findings + DQ report]
- N2 -->|features_manifest + ABT| AR2[05_artifacts/02<br/>Manifest + notas]
- N3 -->|benchmark + summary| AR3[05_artifacts/03<br/>Benchmark + validation]
- N4 -->|model card| AR4[05_artifacts/04<br/>Model card + inferência]
+D --> N3  
+N1 -->|Quality report + findings| AR1[05_artifacts/01<br/>EDA findings + DQ report]  
+N2 -->|features_manifest + ABT| AR2[05_artifacts/02<br/>Manifest + notas]  
+N3 -->|benchmark + summary| AR3[05_artifacts/03<br/>Benchmark + validation]  
+N4 -->|model card| AR4[05_artifacts/04<br/>Model card + inferência]
 
-N2 --> D
- N3 --> M[04_models<br/>best_model.pkl]
- M --> N4
- N4 --> S[06_submissions<br/>submission.csv]
+N2 --> D  
+N3 --> M[04_models<br/>best_model.pkl]  
+M --> N4  
+N4 --> S[06_submissions<br/>submission.csv]
 
-subgraph SRC[03_src (Evolução)]
- S1[data_loader.py]
- S2[features.py]
- S3[modeling.py]
- S4[evaluation.py]
- end
+subgraph SRC[03_src (Evolução)]  
+S1[data_loader.py]  
+S2[features.py]  
+S3[modeling.py]  
+S4[evaluation.py]  
+end
 
-SRC -. reutilizado por .-> N1
- SRC -. reutilizado por .-> N2
- SRC -. reutilizado por .-> N3
- SRC -. reutilizado por .-> N4
+SRC -. reutilizado por .-> N1  
+SRC -. reutilizado por .-> N2  
+SRC -. reutilizado por .-> N3  
+SRC -. reutilizado por .-> N4
 ```
-
----
-
-
-
-
-
-## 4) Alternativa ASCII (caso você queira)
 
 ### Diagrama (ASCII)
 
 ```textile
-RAW → BRONZE → SILVER → GOLD(ABT)
- |
- v
-Notebook 01 (BU+DU) → artifacts/01 (EDA + Data Quality)
-Notebook 02 (Prep) → artifacts/02 + gold/ABT
-Notebook 03 (Model) → artifacts/03 + models/best_model.pkl
+RAW → BRONZE → SILVER → GOLD(ABT)  
+|  
+v  
+Notebook 01 (BU+DU) → artifacts/01 (EDA + Data Quality)  
+Notebook 02 (Prep) → artifacts/02 + gold/ABT  
+Notebook 03 (Model) → artifacts/03 + models/best_model.pkl  
 Notebook 04 (Ops) → artifacts/04 + submissions/submission.csv
-
-
 ```
 
 Evolução: lógica migra de notebooks → src/ (data/features/model/eval)
 
 ---
+
+
 
 # 🔁 Fluxo de Trabalho
 
@@ -439,5 +427,3 @@ Roberto Soares
 Data Engineering | Data Science | Developer Experience
 
 ---
-
----fi/
