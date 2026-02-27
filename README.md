@@ -178,7 +178,7 @@ S4 -.-> N4
 
 ### Diagrama (ASCII)
 
-```textile
+```mer
 RAW → BRONZE → SILVER → GOLD(ABT)  
 |  
 v  
