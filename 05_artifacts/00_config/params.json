@@ -1,0 +1,20 @@
+{
+  "project_name": "ds-crispdm-project",
+  "dataset_name": "TBD",
+  "target": "TBD",
+  "primary_metric": "roc_auc",
+  "secondary_metrics": [
+    "accuracy",
+    "f1"
+  ],
+  "random_state": 42,
+  "cv_n_splits": 5,
+  "paths": {
+    "raw_dir": "data/00_raw",
+    "silver_dir": "data/02_silver",
+    "gold_dir": "data/03_gold",
+    "models_dir": "models",
+    "submissions_dir": "submissions",
+    "artifacts_dir": "artifacts"
+  }
+}
