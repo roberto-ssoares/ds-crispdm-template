@@ -178,14 +178,14 @@ S4 -.-> N4
 
 ### Diagrama (ASCII)
 
-```mer
+```textile
 RAW → BRONZE → SILVER → GOLD(ABT)  
-|  
-v  
-Notebook 01 (BU+DU) → artifacts/01 (EDA + Data Quality)  
-Notebook 02 (Prep) → artifacts/02 + gold/ABT  
-Notebook 03 (Model) → artifacts/03 + models/best_model.pkl  
-Notebook 04 (Ops) → artifacts/04 + submissions/submission.csv
+|
+V  
+Notebook 01 (BU+DU) -> artifacts/01 (EDA + Data Quality)  
+Notebook 02 (Prep) -> artifacts/02 + gold/ABT  
+Notebook 03 (Model) -> artifacts/03 + models/best_model.pkl  
+Notebook 04 (Ops) -> artifacts/04 + submissions/submission.csv
 ```
 
 Evolução: lógica migra de notebooks → src/ (data/features/model/eval)
