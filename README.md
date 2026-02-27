@@ -135,89 +135,27 @@ Isso reduz retrabalho, evita divergências e facilita auditoria do processo.
 ### Diagrama de Arquitetura (CRISP-DM + Artefatos)
 
 ```mermaid
-flowchart TB 
-A[00_data/00_raw  
-Dados originais] --> B[00_data/01_bronze  
-Ingestão mínima] 
-B --> C[00_data/02_silver  
-Limpeza + consistência] 
-C --> D[00_data/03_gold  
-ABT / Dataset de modelagem]
+flowchart TB
 
-subgraph N[02_notebooks (CRISP-DM)]  
-N0[00_project_index  
-Hub + Gates]  
-N1[01_business_data_understanding  
-BU + DU (EDA/Qualidade)]  
-N2[02_data_preparation_abt  
-Prep + FE + ABT]  
-N3[03_modeling_validation  
-Modeling + Validation]  
-N4[04_operationalization_submission  
-Deploy/Inference + Submission]  
-end
-
-D --> N3  
-N1 -->|Quality report + findings| AR1[05_artifacts/01  
-EDA findings + DQ report]  
-N2 -->|features_manifest + ABT| AR2[05_artifacts/02  
-Manifest + notas]  
-N3 -->|benchmark + summary| AR3[05_artifacts/03  
-Benchmark + validation]  
-N4 -->|model card| AR4[05_artifacts/04  
-Model card + inferência]
-
-N2 --> D  
-N3 --> M[04_models  
-best_model.pkl]  
-M --> N4  
-N4 --> S[06_submissions  
-submission.csv]
-
-subgraph SRC[03_src (Evolução)]  
-S1[data_loader.py]  
-S2[features.py]  
-S3[modeling.py]  
-S4[evaluation.py]  
-end
-
-SRC -. reutilizado por .-> N1  
-SRC -. reutilizado por .-> N2  
-SRC -. reutilizado por .-> N3  
-SRC -. reutilizado por .-> N4flowchart TB
-
-A["00_data/00_raw  
-Dados originais"] --> B["00_data/01_bronze  
-Ingestão mínima"]
-B --> C["00_data/02_silver  
-Limpeza + consistência"]
-C --> D["00_data/03_gold  
-ABT / Dataset de modelagem"]
+A["00_data/00_raw - Dados originais"] --> B["00_data/01_bronze - Ingestão mínima"]
+B --> C["00_data/02_silver - Limpeza + consistência"]
+C --> D["00_data/03_gold - ABT / Dataset de modelagem"]
 
 subgraph Notebooks_CRISP_DM
-N0["00_project_index  
-Hub + Gates"]
-N1["01_business_data_understanding  
-BU + DU"]
-N2["02_data_preparation_abt  
-Prep + FE + ABT"]
-N3["03_modeling_validation  
-Modeling + Validation"]
-N4["04_operationalization_submission  
-Deploy + Inference"]
+N0["00_project_index - Hub + Gates"]
+N1["01_business_data_understanding - BU + DU"]
+N2["02_data_preparation_abt - Prep + FE + ABT"]
+N3["03_modeling_validation - Modeling + Validation"]
+N4["04_operationalization_submission - Deploy + Inference"]
 end
 
 D --> N3
 N2 --> D
 
-N1 --> AR1["artifacts/01  
-EDA + Data Quality"]
-N2 --> AR2["artifacts/02  
-Features Manifest"]
-N3 --> AR3["artifacts/03  
-Benchmark + Validation"]
-N4 --> AR4["artifacts/04  
-Model Card"]
+N1 --> AR1["artifacts/01 - EDA + Data Quality"]
+N2 --> AR2["artifacts/02 - Features Manifest"]
+N3 --> AR3["artifacts/03 - Benchmark + Validation"]
+N4 --> AR4["artifacts/04 - Model Card"]
 
 N3 --> M["models/best_model.pkl"]
 M --> N4
