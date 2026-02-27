@@ -2,6 +2,15 @@
 
 
 
+![CRISP-DM](https://img.shields.io/badge/Methodology-CRISP--DM-blue)
+![Reproducible](https://img.shields.io/badge/Reproducible-Yes-brightgreen)
+![uv-powered](https://img.shields.io/badge/Environment-uv-purple)
+![Python](https://img.shields.io/badge/Python-3.12+-blue)
+![Status](https://img.shields.io/badge/Status-Active-success)
+![License](https://img.shields.io/badge/License-MIT-lightgrey)
+
+
+
 ### Data Science Project Framework baseado em CRISP-DM + Engenharia Moderna de Dados
 
 ---
